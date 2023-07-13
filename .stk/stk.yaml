@@ -1,0 +1,23 @@
+schema-version: v1
+kind: manifest
+metadata:
+  name: app-test-21125kru9012vrak
+  description: Description of app-test-21125kru9012vrak
+  starter: studio-automated-tests-qa/stack-automated-tests-qa/starter-automated-tests-qa
+  stack-version-id: 01H508K6WH1EHB785ZRNDTEP6D
+  stack: stack-automated-tests-qa
+spec:
+  type: app
+  app-id: 01H58E6SFDTQ7PMCY113E2NGYX
+  plugins:
+    - name: studio-automated-tests-qa/stack-automated-tests-qa/plugin-app-default@0.0.1
+      plugin-version-id: 01H4ZXYMDZ5Z8CTW2NAQ6761MC
+      stack-version-id: 01H508K6WH1EHB785ZRNDTEP6D
+      type: app
+      inputs:
+        resource: Client
+      inputs-envs: {}
+      connectors: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
