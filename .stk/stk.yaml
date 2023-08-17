@@ -8,6 +8,7 @@ metadata:
   stack: stack-automated-tests-qa
 spec:
   type: app
+  app-id: 01H81XVNCVKZ58PVEBG4Z0MVQ9
   plugins:
     - name: studio-automated-tests-qa/stack-automated-tests-qa/plugin-app-default@0.0.1
       alias: plugin-app-default
