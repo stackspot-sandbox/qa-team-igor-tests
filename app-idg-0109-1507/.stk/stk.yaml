@@ -1,0 +1,29 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: app-idg-0109-1507
+  description: app-idg-0109-1507 desc
+  starter: studio-automated-tests-qa/stack-automated-tests-infra/starter-01-slug
+  stack-version-id: 01H98T7XJ1W4NC2HM66XT3S0FT
+  stack: stack-automated-tests-infra
+spec:
+  type: app
+  plugins:
+    - name: studio-automated-tests-qa/stack-automated-tests-infra@2.0.0/p-app-requires-s3@0.0.2
+      alias: p-app-requires-s3
+      plugin-version-id: 01H98TWY8SSMGCMPJGWJRYKKJS
+      stack-version-id: 01H98T7XJ1W4NC2HM66XT3S0FT
+      type: app
+      inputs:
+        input1: input1-value
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires:
+          - type: aws-s3-conn
+            selected: conn-46a7f18b
+            alias: plugin-app-required-conn-alias
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
