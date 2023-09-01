@@ -8,6 +8,7 @@ metadata:
   stack: stack-automated-tests-infra
 spec:
   type: app
+  app-id: 01H98Z72DQNNZ56QEAHS3WCKTM
   plugins:
     - name: studio-automated-tests-qa/stack-automated-tests-infra@2.0.0/p-app-requires-s3@0.0.2
       alias: p-app-requires-s3
