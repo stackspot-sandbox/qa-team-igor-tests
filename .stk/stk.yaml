@@ -66,3 +66,4 @@ spec:
             picture: imgs/db_status_ico.png
   global-inputs: {}
   global-computed-inputs: {}
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
