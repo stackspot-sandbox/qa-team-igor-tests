@@ -1,0 +1,69 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: app-mci-02
+  description: descrição
+  starter: studio-automated-tests-qa/stack-automated-tests-qa/starter-automated-tests-qa
+  stack-version-id: 01H9JPTDY0R8JKPGQ536YXRSBM
+  stack: stack-automated-tests-qa
+spec:
+  type: app
+  app-id: 01H9P72SA03GAZMFJ8ZYF0V36Z
+  plugins:
+    - name: studio-automated-tests-qa/stack-automated-tests-qa@1.0.0/plugin-app-default@0.0.1
+      alias: plugin-app-default
+      plugin-version-id: 01H4ZXYMDZ5Z8CTW2NAQ6761MC
+      stack-version-id: 01H9JPTDY0R8JKPGQ536YXRSBM
+      type: app
+      inputs:
+        resource: Client
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: studio-automated-tests-qa/stack-automated-tests-qa@1.0.0/p-infra-generate-s3@0.0.3
+      alias: my-alias-aws-s3-conn
+      plugin-version-id: 01H9GWCPMEY4754KGCE0MT1RB0
+      stack-version-id: 01H9JPTDY0R8JKPGQ536YXRSBM
+      type: infra
+      inputs:
+        bucket1_name: bucket1-mci-01
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-s3-conn
+            selected: conn-mci-local
+            alias: my-alias-aws-s3-conn
+        requires: []
+      links:
+        generates: []
+    - name: studio-automated-tests-qa/stack-automated-tests-qa@1.0.0/p-infra-requires-s3@0.0.3
+      alias: p-alias-from-required-conn
+      plugin-version-id: 01H995WAECY7MYJ4NY2RM5SZTE
+      stack-version-id: 01H9JPTDY0R8JKPGQ536YXRSBM
+      type: infra
+      inputs:
+        resource: Client
+        method: GET
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires:
+          - type: aws-s3-conn
+            selected: conn-mci-local
+            alias: p-alias-from-required-conn
+      links:
+        generates:
+          - name: Gerenciar grupos AWS
+            url: https://zup.service-now.com/stackspot?id=sc_cat_item&sys_id=XPTO
+            type: static
+            picture: imgs/servicenow.png
+          - name: Database Status
+            url: https://host.com/Client/{{stk_env}}//status
+            type: dynamic
+            picture: imgs/db_status_ico.png
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
