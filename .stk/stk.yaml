@@ -1,0 +1,29 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: infra-idg-test-repository
+  description: descrição ã à infra-idg-test-repository
+  stack-version-id: 01H9JPJH5TFVHES27RV76DVXCR
+  stack: stack-automated-tests-infra
+spec:
+  type: infra
+  infra-id: 01H9P1HSKE6H2APJ6P5AMXP1X9
+  plugins:
+    - name: studio-automated-tests-qa/stack-automated-tests-infra@2.4.0/p-infra-generate-s3@0.0.3
+      alias: p-infra-generate-s3
+      plugin-version-id: 01H9GWCPMEY4754KGCE0MT1RB0
+      stack-version-id: 01H9JPJH5TFVHES27RV76DVXCR
+      type: infra
+      inputs:
+        bucket1_name: bbbbbb111111
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-s3-conn
+            selected: conn-generate
+            alias: my-alias-aws-s3-conn
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
