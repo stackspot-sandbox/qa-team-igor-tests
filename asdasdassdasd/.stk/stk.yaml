@@ -1,0 +1,44 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: asdasdassdasd
+  description: dasdasdsa
+  starter: studio-automated-tests-qa/stack-automated-tests-qa@2.0.0/starter-automated-tests-qa
+  stack-version-id: 01HA5BGQJG5B9TCSQ7SB1KDZTR
+  stack: stack-automated-tests-qa@2.0.0
+spec:
+  type: app
+  app-id: 01HAA2K8A0FDTEKZ9J5M9MBSQ8
+  plugins:
+    - name: studio-automated-tests-qa/stack-automated-tests-qa@2.0.0/plugin-app-default@0.0.1
+      alias: alias-1
+      plugin-version-id: 01H4ZXYMDZ5Z8CTW2NAQ6761MC
+      stack-version-id: 01HA5BGQJG5B9TCSQ7SB1KDZTR
+      type: app
+      inputs:
+        resource: Client
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: studio-automated-tests-qa/stack-automated-tests-qa@2.0.0/p-infra-generate-s3@0.0.3
+      alias: alias-2
+      plugin-version-id: 01H9GWCPMEY4754KGCE0MT1RB0
+      stack-version-id: 01HA5BGQJG5B9TCSQ7SB1KDZTR
+      type: infra
+      inputs:
+        bucket1_name: bucket1
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-s3-conn
+            selected: conn1
+            alias: my-alias-aws-s3-conn
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
