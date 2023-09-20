@@ -1,0 +1,27 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: app-test-b33dd82e
+  description: Description of app-test-b33dd82e
+  starter: studio-automated-tests-qa/stack-automated-tests-qa@2.0.0/starter-automated-tests-qa
+  stack-version-id: 01HA5BGQJG5B9TCSQ7SB1KDZTR
+  stack: stack-automated-tests-qa@2.0.0
+spec:
+  type: app
+  plugins:
+    - name: studio-automated-tests-qa/stack-automated-tests-qa@2.0.0/plugin-app-default@0.0.1
+      alias: plugin-alias
+      plugin-version-id: 01H4ZXYMDZ5Z8CTW2NAQ6761MC
+      stack-version-id: 01HA5BGQJG5B9TCSQ7SB1KDZTR
+      type: app
+      inputs:
+        resource: Client
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
