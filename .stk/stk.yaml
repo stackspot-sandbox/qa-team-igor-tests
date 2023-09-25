@@ -1,0 +1,53 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: infra-check-api-01
+  description: infra-check-api-01 desc descrição
+  stack-version-id: 01HA5BGQJG5B9TCSQ7SB1KDZTR
+  stack: stack-automated-tests-qa@2.0.0
+spec:
+  type: infra
+  infra-id: 01HB6ARJTT9NQV773E5QKMG84G
+  plugins:
+    - name: studio-automated-tests-qa/stack-automated-tests-qa@2.0.0/p-infra-generate-two-s3@0.0.1
+      alias: alias-01
+      plugin-version-id: 01HA5A4MF3ZE2YQ47XE7JNZQ2X
+      stack-version-id: 01HA5BGQJG5B9TCSQ7SB1KDZTR
+      type: infra
+      inputs:
+        bucket1_name: bucket1
+        bucket2_name: bucket2
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-s3-conn
+            selected: conn1
+            alias: alias-s3-1
+          - type: aws-s3-conn
+            selected: conn2
+            alias: alias-s3-2
+        requires: []
+      links:
+        generates: []
+    - name: studio-automated-tests-qa/stack-automated-tests-qa@2.0.0/p-infra-requires-two-s3@0.0.1
+      alias: alias-02
+      plugin-version-id: 01HA5AM6H4XSCVDEV3T918W8WB
+      stack-version-id: 01HA5BGQJG5B9TCSQ7SB1KDZTR
+      type: infra
+      inputs:
+        dummy_field_1: value1-from-p-infra-requires-two-s3
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires:
+          - type: aws-s3-conn
+            selected: conn1
+            alias: alias-s3-1-required
+          - type: aws-s3-conn
+            selected: conn2
+            alias: alias-s3-2-required
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
