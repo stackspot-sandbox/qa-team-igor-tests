@@ -7,6 +7,7 @@ metadata:
   stack: stack-automated-tests-qa@2.0.0
 spec:
   type: infra
+  infra-id: 01HB6ARJTT9NQV773E5QKMG84G
   plugins:
     - name: studio-automated-tests-qa/stack-automated-tests-qa@2.0.0/p-infra-generate-two-s3@0.0.1
       alias: alias-01
