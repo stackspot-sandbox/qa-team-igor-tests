@@ -1,0 +1,29 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: asdasdasasdasdas
+  description: dasdasdas
+  stack-version-id: 01HA5BGQJG5B9TCSQ7SB1KDZTR
+  stack: stack-automated-tests-qa@2.0.0
+spec:
+  type: infra
+  plugins:
+    - name: studio-automated-tests-qa/stack-automated-tests-qa@2.0.0/p-infra-generate-s3@0.0.3
+      alias: asdasd
+      plugin-version-id: 01H9GWCPMEY4754KGCE0MT1RB0
+      stack-version-id: 01HA5BGQJG5B9TCSQ7SB1KDZTR
+      type: infra
+      inputs:
+        bucket1_name: asdasd
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-s3-conn
+            selected: asdasd
+            alias: my-alias-aws-s3-conn
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
