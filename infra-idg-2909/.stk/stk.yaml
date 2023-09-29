@@ -1,0 +1,54 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: infra-idg-2909
+  description: infra-idg-2909
+  stack-version-id: 01HA5BDYFH0DPMSV4RPD0HM1Q6
+  stack: stack-automated-tests-infra@3.0.0
+spec:
+  type: infra
+  plugins:
+    - name: studio-automated-tests-qa/stack-automated-tests-infra@3.0.0/p-infra-generate-s3@0.0.3
+      alias: alias1
+      plugin-version-id: 01H9GWCPMEY4754KGCE0MT1RB0
+      stack-version-id: 01HA5BDYFH0DPMSV4RPD0HM1Q6
+      type: infra
+      inputs:
+        bucket1_name: bbbb1
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-s3-conn
+            selected: conn1
+            alias: my-alias-aws-s3-conn
+        requires: []
+      links:
+        generates: []
+    - name: studio-automated-tests-qa/stack-automated-tests-infra@3.0.0/p-infra-requires-s3@0.0.3
+      alias: alias2
+      plugin-version-id: 01H995WAECY7MYJ4NY2RM5SZTE
+      stack-version-id: 01HA5BDYFH0DPMSV4RPD0HM1Q6
+      type: infra
+      inputs:
+        resource: Client
+        method: GET
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires:
+          - type: aws-s3-conn
+            selected: conn1
+            alias: p-alias-from-required-conn
+      links:
+        generates:
+          - name: Gerenciar grupos AWS
+            url: https://zup.service-now.com/stackspot?id=sc_cat_item&sys_id=XPTO
+            type: static
+            picture: imgs/servicenow.png
+          - name: Database Status
+            url: https://host.com/Client/{{stk_env}}//status
+            type: dynamic
+            picture: imgs/db_status_ico.png
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
