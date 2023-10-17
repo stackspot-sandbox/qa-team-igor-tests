@@ -1,0 +1,66 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: app-test-f59e5850
+  description: Description or Descrição of app-test-f59e5850
+  starter: studio-automated-tests-qa/stack-automated-tests-qa@5.0.0/starter-automated-tests-qa
+  stack-version-id: 01HBVMWAT2SB9E3ENNBSAN2S3W
+  stack: stack-automated-tests-qa@5.0.0
+spec:
+  type: app
+  plugins:
+    - name: studio-automated-tests-qa/stack-automated-tests-qa@5.0.0/plugin-app-default@0.0.1
+      alias: plugin-app-default-1697537227072
+      plugin-version-id: 01H4ZXYMDZ5Z8CTW2NAQ6761MC
+      stack-version-id: 01HBVMWAT2SB9E3ENNBSAN2S3W
+      type: app
+      inputs:
+        resource: Client
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: studio-automated-tests-qa/stack-automated-tests-qa@5.0.0/p-infra-generate-two-s3@0.0.3
+      alias: alias01
+      plugin-version-id: 01HBV4218P6XW62R3GNA827JWC
+      stack-version-id: 01HBVMWAT2SB9E3ENNBSAN2S3W
+      type: infra
+      inputs:
+        bucket1_name: dummy-bucket-1
+        bucket2_name: dummy-bucket-2
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-s3-conn
+            selected: conn1
+            alias: alias-s3-1
+          - type: aws-s3-conn
+            selected: conn2
+            alias: alias-s3-2
+        requires: []
+      links:
+        generates: []
+    - name: studio-automated-tests-qa/stack-automated-tests-qa@5.0.0/p-infra-requires-two-s3@0.0.1
+      alias: alias02
+      plugin-version-id: 01HA5AM6H4XSCVDEV3T918W8WB
+      stack-version-id: 01HBVMWAT2SB9E3ENNBSAN2S3W
+      type: infra
+      inputs:
+        dummy_field_1: value1-from-p-infra-requires-two-s3
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires:
+          - type: aws-s3-conn
+            selected: conn2
+            alias: alias-s3-1-required
+          - type: aws-s3-conn
+            selected: conn1
+            alias: alias-s3-2-required
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
