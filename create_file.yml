@@ -1,0 +1,32 @@
+kind: application
+metadata:
+  description: description
+  name: idg-app-2
+schema-version: v1
+spec:
+  applied-plugins:
+  - alias: plugin-app-dummy-01-1703003605491
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input1: value1
+    inputs-envs: {}
+    name: qatests-studio-base2/qatests-stack-base@1.0.0/plugin-app-dummy-01
+  - alias: plugin-app-dummy-01-1703003609215
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input1: value1
+    inputs-envs: {}
+    name: qatests-studio-base2/qatests-stack-base@1.0.0/plugin-app-dummy-01
+  - alias: plugin-app-dummy-01-1703003611550
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input1: value1
+    inputs-envs: {}
+    name: qatests-studio-base2/qatests-stack-base@1.0.0/plugin-app-dummy-01
+  repository: https://github.com/guedes-spot/qa-team-igor-tests

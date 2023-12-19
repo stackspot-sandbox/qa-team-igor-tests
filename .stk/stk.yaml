@@ -1,0 +1,53 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: idg-app-2
+  description: description
+  starter: qatests-studio-base2/qatests-stack-base@1.0.0/qatests-starter-base
+  stack-version-id: 01HJ1CG2797EADQFRN6BS93F2R
+  stack: qatests-stack-base@1.0.0
+spec:
+  type: app
+  plugins:
+    - name: qatests-studio-base2/qatests-stack-base@1.0.0/plugin-app-dummy-01@0.0.1
+      alias: plugin-app-dummy-01-1703003605491
+      plugin-version-id: 01HJ17PJWZ25SA3MEQZ68CEVHD
+      stack-version-id: 01HJ1CG2797EADQFRN6BS93F2R
+      type: app
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: qatests-studio-base2/qatests-stack-base@1.0.0/plugin-app-dummy-01@0.0.1
+      alias: plugin-app-dummy-01-1703003609215
+      plugin-version-id: 01HJ17PJWZ25SA3MEQZ68CEVHD
+      stack-version-id: 01HJ1CG2797EADQFRN6BS93F2R
+      type: app
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: qatests-studio-base2/qatests-stack-base@1.0.0/plugin-app-dummy-01@0.0.1
+      alias: plugin-app-dummy-01-1703003611550
+      plugin-version-id: 01HJ17PJWZ25SA3MEQZ68CEVHD
+      stack-version-id: 01HJ1CG2797EADQFRN6BS93F2R
+      type: app
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
