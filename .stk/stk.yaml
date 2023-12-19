@@ -1,0 +1,72 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: infra-1
+  description: infra-1
+  stack-version-id: 01HJ1F69RM1S5HXXKEWWE7MZKM
+  stack: qatests-stack-base@2.0.0
+spec:
+  type: infra
+  plugins:
+    - name: qatests-studio-base2/qatests-stack-base@2.0.0/plugin-infra-dummy-01@0.0.1
+      alias: plugin-infra-dummy-01-1703004154023
+      plugin-version-id: 01HJ1F1Z8RZY3C7YCMJ1H1MPJ1
+      stack-version-id: 01HJ1F69RM1S5HXXKEWWE7MZKM
+      type: infra
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: 
+        qatests-studio-base2/qatests-stack-base@2.0.0/plugin-infra-generates-one-sns@0.0.1
+      alias: plugin-infra-generates-one-sns-1703004246448
+      plugin-version-id: 01HJ1EYGDTVZSZKZJPNATVPZP6
+      stack-version-id: 01HJ1F69RM1S5HXXKEWWE7MZKM
+      type: infra
+      inputs:
+        topic1_name: topic1-dummy
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-sns-conn
+            selected: conn1
+            alias: alias-generate-one-sns
+        requires: []
+      links:
+        generates: []
+    - name: 
+        qatests-studio-base2/qatests-stack-base@2.0.0/plugin-infra-requires-sns-and-generates-links@0.0.2
+      alias: plugin-infra-requires-sns-and-generates-links-1703004284660
+      plugin-version-id: 01HJ1F18Y7ENBKSTRFPAJ19M9S
+      stack-version-id: 01HJ1F69RM1S5HXXKEWWE7MZKM
+      type: infra
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires:
+          - type: aws-sns-conn
+            selected: conn1
+            alias: alias-for-aws-sns-conn
+      links:
+        generates:
+          - name: Google Static Search
+            url: "https://www.google.com/search?q=Stackspot"
+            type: static
+            picture: imgs/google_png.png
+          - name: Google Dynamic Search (using Plugin Input data)
+            url: https://www.google.com/search?q=value1
+            type: dynamic
+            picture: imgs/google_png.png
+          - name: Google Dynamic Search (using Deployment data)
+            url: https://www.google.com/search?q={{stk_env}}+{{connections.conn1.arn}}
+            type: dynamic
+            picture: imgs/google_png.png
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
