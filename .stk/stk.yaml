@@ -1,0 +1,40 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: app-sucesso-01
+  description: app-sucesso-01
+  starter: qatests-studio-base/qatests-stack-base@6.0.0/qatests-starter-base
+  stack-version-id: 01HHM5TQA59W264356M4RN4MCB
+  stack: qatests-stack-base@6.0.0
+spec:
+  type: app
+  plugins:
+    - name: qatests-studio-base/qatests-stack-base@6.0.0/plugin-app-dummy-01@0.0.1
+      alias: plugin-app-dummy-01-1702988536240
+      plugin-version-id: 01HER273JJWYBH5HBTT9D71ZHK
+      stack-version-id: 01HHM5TQA59W264356M4RN4MCB
+      type: app
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: qatests-studio-base/qatests-stack-base@6.0.0/plugin-app-dummy-02@0.0.1
+      alias: plugin-app-dummy-02-1702988542150
+      plugin-version-id: 01HER28S4J1V4X1ZRCYC2BRKK9
+      stack-version-id: 01HHM5TQA59W264356M4RN4MCB
+      type: app
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
