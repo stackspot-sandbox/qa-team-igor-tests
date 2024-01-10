@@ -1,0 +1,57 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: app-outside-original-studio
+  description: https://github.com/guedes-spot/qa-team-igor-tests
+  starter: studio-two/stack-two@0.0.2/starter-two
+  stack-version-id: 01HKSSTQBEM5FG1KCFNMS52MTM
+  stack: stack-two@0.0.2
+spec:
+  type: app
+  app-id: 01HKT69A0SEC8CR20YA8NYJBWS
+  plugins:
+    - name: studio-two/stack-two@0.0.2/plugin-app-two@0.0.1
+      alias: plugin-app-two-1704907272884
+      plugin-version-id: 01HKSRSVGM5KG17JEKD6Y2C289
+      stack-version-id: 01HKSSTQBEM5FG1KCFNMS52MTM
+      type: app
+      inputs:
+        resource: Client
+        method: GET
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: studio-two/stack-two@0.0.2/plugin-app-one@0.0.1
+      alias: plugin-app-one-1704907272890
+      plugin-version-id: 01HKSRM7GM4GWQXQMGEFEHKPJR
+      stack-version-id: 01HKSSTQBEM5FG1KCFNMS52MTM
+      type: app
+      inputs:
+        resource: Client
+        method: GET
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: studio-two/stack-two@0.0.2/plugin-app-one-optional@0.0.1
+      alias: plugin-app-one-optional-1704907279371
+      plugin-version-id: 01HKSSR1SH9X9AWQR59KHZR612
+      stack-version-id: 01HKSSTQBEM5FG1KCFNMS52MTM
+      type: app
+      inputs:
+        resource: Client
+        method: GET
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
