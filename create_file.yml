@@ -1,0 +1,35 @@
+kind: application
+metadata:
+  description: https://github.com/guedes-spot/qa-team-igor-tests
+  name: app-outside-original-studio
+schema-version: v1
+spec:
+  applied-plugins:
+  - alias: plugin-app-two-1704907272884
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      method: GET
+      resource: Client
+    inputs-envs: {}
+    name: studio-two/stack-two@0.0.2/plugin-app-two
+  - alias: plugin-app-one-1704907272890
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      method: GET
+      resource: Client
+    inputs-envs: {}
+    name: studio-two/stack-two@0.0.2/plugin-app-one
+  - alias: plugin-app-one-optional-1704907279371
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      method: GET
+      resource: Client
+    inputs-envs: {}
+    name: studio-two/stack-two@0.0.2/plugin-app-one-optional
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
