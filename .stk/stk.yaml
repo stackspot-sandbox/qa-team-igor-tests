@@ -8,6 +8,7 @@ metadata:
   stack: stack-two@0.0.2
 spec:
   type: app
+  app-id: 01HKT69A0SEC8CR20YA8NYJBWS
   plugins:
     - name: studio-two/stack-two@0.0.2/plugin-app-two@0.0.1
       alias: plugin-app-two-1704907272884
