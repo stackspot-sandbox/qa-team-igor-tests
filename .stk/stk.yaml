@@ -7,6 +7,7 @@ metadata:
   stack: qatests-stack-base@9.0.0
 spec:
   type: infra
+  infra-id: 01HM9HGV11NW2NJZY216H13H1N
   plugins:
     - name: 
         qatests-studio-base/qatests-stack-base@9.0.0/plugin-infra-generates-one-sns@0.0.1
