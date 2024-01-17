@@ -1,0 +1,44 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: 2infra-idg-16-11-24
+  description: asdasd
+  starter: qatests-studio-base/qatests-stack-base@9.0.0/qatests-starter-base
+  stack-version-id: 01HM9CE37BPECFPQGG3X0R2DWG
+  stack: qatests-stack-base@9.0.0
+spec:
+  type: app
+  plugins:
+    - name: qatests-studio-base/qatests-stack-base@9.0.0/plugin-app-dummy-01@0.0.1
+      alias: plugin-app-dummy-01-1705522575014
+      plugin-version-id: 01HER273JJWYBH5HBTT9D71ZHK
+      stack-version-id: 01HM9CE37BPECFPQGG3X0R2DWG
+      type: app
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: 
+        qatests-studio-base/qatests-stack-base@9.0.0/plugin-infra-generates-one-sns@0.0.1
+      alias: plugin-infra-generates-one-sns-1705522578800
+      plugin-version-id: 01HER3VCYMRQ4FRFCB2GAN47A8
+      stack-version-id: 01HM9CE37BPECFPQGG3X0R2DWG
+      type: infra
+      inputs:
+        topic1_name: dummy-sns
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-sns-conn
+            selected: asdasdasdadasdasdasdasdasdasdasdasasdasdasdadasda1
+            alias: alias-generate-one-sns
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
