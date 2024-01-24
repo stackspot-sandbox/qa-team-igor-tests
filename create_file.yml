@@ -1,0 +1,31 @@
+kind: shared-infrastructure
+metadata:
+  description: infra-12-sadasd12312asd
+  name: infra-12-sadasd12312asd
+schema-version: v1
+spec:
+  applied-plugins:
+  - alias: plugin-infra-generates-one-sns-1706122666703
+    connections:
+      generates:
+      - alias: alias-generate-one-sns
+        selected: con-240124
+        type: aws-sns-conn
+      requires: []
+    inputs:
+      topic1_name: dummy-01
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@1.0.0/plugin-infra-generates-one-sns
+  - alias: plugin-infra-requires-one-sns-1706122688586
+    connections:
+      generates: []
+      requires:
+      - alias: alias-requires-one-sns
+        selected: con-240124
+        type: aws-sns-conn
+    inputs:
+      resource: Client
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@1.0.0/plugin-infra-requires-one-sns
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
+  stack-qualifier: qatests-studio-base/qatests-stack-base@1.0.0
