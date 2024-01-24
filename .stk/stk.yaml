@@ -1,0 +1,54 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: infra-12-sadasd12312asd2
+  description: infra-12-sadasd12312asd2
+  stack-version-id: 01HEQZV2HGW956BZJ7921SK7QT
+  stack: qatests-stack-base@1.0.0
+spec:
+  type: infra
+  plugins:
+    - name: 
+        qatests-studio-base/qatests-stack-base@1.0.0/plugin-infra-generates-two-sns@0.0.1
+      alias: plugin-infra-generates-two-sns-1706122889330
+      plugin-version-id: 01HER3WF4YFFW2K8W20PD5K9R1
+      stack-version-id: 01HEQZV2HGW956BZJ7921SK7QT
+      type: infra
+      inputs:
+        topic1_name: '123456'
+        topic2_name: 123456a
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-sns-conn
+            selected: con12345
+            alias: sns-generate-alias-1
+          - type: aws-sns-conn
+            selected: con123456
+            alias: sns-generate-alias-2
+        requires: []
+      links:
+        generates: []
+    - name: qatests-studio-base/qatests-stack-base@1.0.0/plugin-infra-requires-two-sns@0.0.1
+      alias: plugin-infra-requires-two-sns-1706122919543
+      plugin-version-id: 01HER3XB6WGTCB4XQ9W5QW3B35
+      stack-version-id: 01HEQZV2HGW956BZJ7921SK7QT
+      type: infra
+      inputs:
+        resource: Client
+        method: GET
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires:
+          - type: aws-sns-conn
+            selected: con123456
+            alias: sns-require-alias-1
+          - type: aws-sns-conn
+            selected: con12345
+            alias: sns-require-alias2
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
