@@ -1,0 +1,38 @@
+kind: application
+metadata:
+  description: app-idg-124125124123asadasd231
+  name: app-idg-124125124123asadasd231
+schema-version: v1
+spec:
+  applied-plugins:
+  - alias: plugin-app-dummy-01-1706103900230
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input1: value1
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@1.0.0/plugin-app-dummy-01
+  - alias: plugin-infra-generates-one-sns-1706103928554
+    connections:
+      generates:
+      - alias: alias-generate-one-sns
+        selected: conne-2411
+        type: aws-sns-conn
+      requires: []
+    inputs:
+      topic1_name: dummy-01-14123123
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@1.0.0/plugin-infra-generates-one-sns
+  - alias: plugin-infra-requires-one-sns-1706103970554
+    connections:
+      generates: []
+      requires:
+      - alias: alias-requires-one-sns
+        selected: conne-2411
+        type: aws-sns-conn
+    inputs:
+      resource: Client
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@1.0.0/plugin-infra-requires-one-sns
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
