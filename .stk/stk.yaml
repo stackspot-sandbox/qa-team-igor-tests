@@ -1,0 +1,70 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: app-test-2accc487
+  description: "Description or Descrição of app-test-2accc487"
+  starter: qatests-studio-base/qatests-stack-base@22.0.0/qatests-starter-base
+  stack-version-id: 01HVVWEZQ13CV3Y9NBM9PRGFDV
+  stack: qatests-stack-base@22.0.0
+spec:
+  type: app
+  app-id: 01HWDSHJTTDS5NBGE178PQEP2Z
+  plugins:
+    - name: 
+        qatests-studio-base/qatests-stack-base@22.0.0/plugin-infra-generates-two-sns@0.0.1
+      alias: alias01
+      plugin-version-id: 01HER3WF4YFFW2K8W20PD5K9R1
+      stack-version-id: 01HVVWEZQ13CV3Y9NBM9PRGFDV
+      type: infra
+      inputs:
+        topic1_name: dummy-sns-1
+        topic2_name: dummy-sns-2
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-sns-conn
+            selected: conn1-cf45ccbe
+            alias: sns-generate-alias-1
+          - type: aws-sns-conn
+            selected: conn2-48324c43
+            alias: sns-generate-alias-2
+        requires: []
+      links:
+        generates: []
+    - name: 
+        qatests-studio-base/qatests-stack-base@22.0.0/plugin-infra-requires-two-sns@0.0.1
+      alias: alias02
+      plugin-version-id: 01HER3XB6WGTCB4XQ9W5QW3B35
+      stack-version-id: 01HVVWEZQ13CV3Y9NBM9PRGFDV
+      type: infra
+      inputs:
+        resource: Client
+        method: GET
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires:
+          - type: aws-sns-conn
+            selected: conn2-48324c43
+            alias: sns-require-alias-1
+          - type: aws-sns-conn
+            selected: conn1-cf45ccbe
+            alias: sns-require-alias2
+      links:
+        generates: []
+    - name: qatests-studio-base/qatests-stack-base@22.0.0/plugin-app-dummy-01@0.0.1
+      alias: plugin-app-dummy-01-1714154894668
+      plugin-version-id: 01HER273JJWYBH5HBTT9D71ZHK
+      stack-version-id: 01HVVWEZQ13CV3Y9NBM9PRGFDV
+      type: app
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
