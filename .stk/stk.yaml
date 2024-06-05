@@ -8,6 +8,7 @@ metadata:
   stack: qatests-stack-base@25.0.0
 spec:
   type: app
+  app-id: 01HZKYGY75JNWAEBKY0948JGAV
   plugins:
     - name: 
         qatests-studio-base/qatests-stack-base@25.0.0/plugin-infra-generates-two-sns@0.0.1
