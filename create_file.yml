@@ -1,0 +1,63 @@
+kind: application
+metadata:
+  description: "Description or Descri\xE7\xE3o of app-test-8ab63004"
+  name: app-test-8ab63004
+schema-version: v1
+spec:
+  applied-plugins:
+  - alias: plugin-app-dummy-01-1717700407362
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input1: value1
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@25.0.0/plugin-app-dummy-01
+  - alias: alias01
+    connections:
+      generates:
+      - alias: sns-generate-alias-1
+        selected: conn1-c656ae2e
+        type: aws-sns-conn
+      - alias: sns-generate-alias-2
+        selected: conn2-af3c3795
+        type: aws-sns-conn
+      requires: []
+    inputs:
+      topic1_name: dummy-sns-1
+      topic2_name: dummy-sns-2
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@25.0.0/plugin-infra-generates-two-sns
+  - alias: alias02
+    connections:
+      generates: []
+      requires:
+      - alias: sns-require-alias-1
+        selected: conn1-c656ae2e
+        type: aws-sns-conn
+      - alias: sns-require-alias2
+        selected: conn2-af3c3795
+        type: aws-sns-conn
+    inputs:
+      method: GET
+      resource: Client
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@25.0.0/plugin-infra-requires-two-sns
+  - alias: plugin-app-from-studio-a-1717700456556
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input1: value1
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@25.0.0/plugin-app-from-studio-a
+  - alias: plugin-infra-from-studio-a-1717700466287
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      method: GET
+      resource: Client
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@25.0.0/plugin-infra-from-studio-a
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
