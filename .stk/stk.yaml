@@ -1,0 +1,97 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: app-test-8ab63004
+  description: "Description or Descrição of app-test-8ab63004"
+  starter: qatests-studio-base/qatests-stack-base@25.0.0/qatests-starter-base
+  stack-version-id: 01HZ2BRXKR9NJSFBJAE74DH1N0
+  stack: qatests-stack-base@25.0.0
+spec:
+  type: app
+  app-id: 01HZQETGSRN2FXMC6BRXN6RQC9
+  plugins:
+    - name: 
+        qatests-studio-base/qatests-stack-base@25.0.0/plugin-infra-generates-two-sns@0.0.1
+      alias: alias01
+      plugin-version-id: 01HER3WF4YFFW2K8W20PD5K9R1
+      stack-version-id: 01HZ2BRXKR9NJSFBJAE74DH1N0
+      type: infra
+      inputs:
+        topic1_name: dummy-sns-1
+        topic2_name: dummy-sns-2
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-sns-conn
+            selected: conn1-c656ae2e
+            alias: sns-generate-alias-1
+          - type: aws-sns-conn
+            selected: conn2-af3c3795
+            alias: sns-generate-alias-2
+        requires: []
+      links:
+        generates: []
+    - name: 
+        qatests-studio-base/qatests-stack-base@25.0.0/plugin-infra-requires-two-sns@0.0.1
+      alias: alias02
+      plugin-version-id: 01HER3XB6WGTCB4XQ9W5QW3B35
+      stack-version-id: 01HZ2BRXKR9NJSFBJAE74DH1N0
+      type: infra
+      inputs:
+        resource: Client
+        method: GET
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires:
+          - type: aws-sns-conn
+            selected: conn1-c656ae2e
+            alias: sns-require-alias-1
+          - type: aws-sns-conn
+            selected: conn2-af3c3795
+            alias: sns-require-alias2
+      links:
+        generates: []
+    - name: qatests-studio-base/qatests-stack-base@25.0.0/plugin-infra-from-studio-a@0.0.1
+      alias: plugin-infra-from-studio-a-1717700466287
+      plugin-version-id: 01HKSTGHE2MKJ0ABNFYKNTMAJN
+      stack-version-id: 01HZ2BRXKR9NJSFBJAE74DH1N0
+      type: infra
+      inputs:
+        resource: Client
+        method: GET
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: qatests-studio-base/qatests-stack-base@25.0.0/plugin-app-dummy-01@0.0.1
+      alias: plugin-app-dummy-01-1717700407362
+      plugin-version-id: 01HER273JJWYBH5HBTT9D71ZHK
+      stack-version-id: 01HZ2BRXKR9NJSFBJAE74DH1N0
+      type: app
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: qatests-studio-base/qatests-stack-base@25.0.0/plugin-app-from-studio-a@0.0.1
+      alias: plugin-app-from-studio-a-1717700456556
+      plugin-version-id: 01HKSTCZ9SDFAZDVBDSJVW0KVB
+      stack-version-id: 01HZ2BRXKR9NJSFBJAE74DH1N0
+      type: app
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
