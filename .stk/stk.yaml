@@ -1,0 +1,27 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: tests-novo-repo-02
+  description: novo repo 2
+  starter: qatests-studio-base/qatests-stack-base@27.0.0/qatests-starter-base
+  stack-version-id: 01J1A6EV4M1WX0MSJV7A1JWW1G
+  stack: qatests-stack-base@27.0.0
+spec:
+  type: app
+  plugins:
+    - name: qatests-studio-base/qatests-stack-base@27.0.0/plugin-app-dummy-01@0.0.1
+      alias: plugin-app-dummy-01-1721741733273
+      plugin-version-id: 01HER273JJWYBH5HBTT9D71ZHK
+      stack-version-id: 01J1A6EV4M1WX0MSJV7A1JWW1G
+      type: app
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
