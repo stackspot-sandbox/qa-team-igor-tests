@@ -1,0 +1,16 @@
+kind: application
+metadata:
+  description: testestes
+  name: dasdas
+schema-version: v1
+spec:
+  applied-plugins:
+  - alias: plugin-app-dummy-01-1721753776213
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input1: value1
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@27.0.0/plugin-app-dummy-01
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
