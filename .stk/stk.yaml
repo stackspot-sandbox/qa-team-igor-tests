@@ -1,0 +1,30 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: testest
+  description: testes
+  stack-version-id: 01J1A6EV4M1WX0MSJV7A1JWW1G
+  stack: qatests-stack-base@27.0.0
+spec:
+  type: infra
+  plugins:
+    - name: 
+        qatests-studio-base/qatests-stack-base@27.0.0/plugin-infra-generates-one-sns@0.0.2
+      alias: plugin-infra-generates-one-sns-1722359335588
+      plugin-version-id: 01J0TKH51C9CB2ESQAPJ7EJJ16
+      stack-version-id: 01J1A6EV4M1WX0MSJV7A1JWW1G
+      type: infra
+      inputs:
+        topic1_name: teste
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-sns-conn
+            selected: asdasdas
+            alias: alias-generate-one-sns
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests

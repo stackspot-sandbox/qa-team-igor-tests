@@ -1,0 +1,20 @@
+kind: shared-infrastructure
+metadata:
+  description: testes
+  name: testest
+schema-version: v1
+spec:
+  applied-plugins:
+  - alias: plugin-infra-generates-one-sns-1722359335588
+    connections:
+      generates:
+      - alias: alias-generate-one-sns
+        selected: asdasdas
+        type: aws-sns-conn
+      requires: []
+    inputs:
+      topic1_name: teste
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@27.0.0/plugin-infra-generates-one-sns
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
+  stack-qualifier: qatests-studio-base/qatests-stack-base@27.0.0
