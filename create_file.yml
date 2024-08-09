@@ -1,0 +1,16 @@
+kind: application
+metadata:
+  description: asdasdas
+  name: asasasasdasd
+schema-version: v1
+spec:
+  applied-plugins:
+  - alias: plugin-app-dummy-01-1723230956854
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input1: value1
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-actions-input-tests@1.0.0/plugin-app-dummy-01
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
