@@ -1,0 +1,73 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: app-12312312
+  description: app-12312312
+  starter: qatests-studio-base/qatests-stack-base@33.0.0/qatests-starter-base
+  stack-version-id: 01J4SKTVZ00A90HCBZCW0873V9
+  stack: qatests-stack-base@33.0.0
+spec:
+  type: app
+  plugins:
+    - name: 
+        qatests-studio-base/qatests-stack-base@33.0.0/plugin-infra-generates-one-sns@0.0.2
+      alias: plugin-infra-generates-one-sns-1723568270407
+      plugin-version-id: 01J0TKH51C9CB2ESQAPJ7EJJ16
+      stack-version-id: 01J4SKTVZ00A90HCBZCW0873V9
+      type: infra
+      inputs:
+        topic1_name: 12312312312qasd
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-sns-conn
+            selected: 1231231231wsqea
+            alias: alias-generate-one-sns
+        requires: []
+      links:
+        generates: []
+    - name: 
+        qatests-studio-base/qatests-stack-base@33.0.0/plugin-infra-requires-sns-and-generates-links@2.0.0
+      alias: plugin-infra-requires-sns-and-generates-links-1723568300286
+      plugin-version-id: 01HP4GRS086MXYFBJQVPM6K074
+      stack-version-id: 01J4SKTVZ00A90HCBZCW0873V9
+      type: infra
+      inputs:
+        input1: '12312312312'
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires:
+          - type: aws-sns-conn
+            selected: 1231231231wsqea
+            alias: alias-for-aws-sns-conn
+      links:
+        generates:
+          - name: Google Static Search
+            url: "https://www.google.com/search?q=Stackspot"
+            type: static
+            picture: imgs/google_png.png
+          - name: Google Dynamic Search (using Plugin Input data)
+            url: https://www.google.com/search?q=12312312312
+            type: dynamic
+            picture: imgs/google_png.png
+          - name: Google Dynamic Search (using Deployment data)
+            url: https://www.google.com/search?q={{stk_env}}+{{connections.1231231231wsqea.arn}}
+            type: dynamic
+            picture: imgs/google_png.png
+    - name: qatests-studio-base/qatests-stack-base@33.0.0/plugin-app-dummy-01@0.0.1
+      alias: plugin-app-dummy-01-1723568249340
+      plugin-version-id: 01HER273JJWYBH5HBTT9D71ZHK
+      stack-version-id: 01J4SKTVZ00A90HCBZCW0873V9
+      type: app
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
