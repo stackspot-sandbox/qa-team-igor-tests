@@ -1,0 +1,40 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: app-igor-1908-02
+  description: app-igor-1908-02
+  starter: qatests-studio-base/qatests-stack-base@37.0.0/qatests-starter-base
+  stack-version-id: 01J5NB9B0CXC6JAPS5M6R8RWQP
+  stack: qatests-stack-base@37.0.0
+spec:
+  type: app
+  plugins:
+    - name: qatests-studio-base/qatests-stack-base@37.0.0/plugin-app-dummy-01@0.0.1
+      alias: plugin-app-dummy-01-1724100254346
+      plugin-version-id: 01HER273JJWYBH5HBTT9D71ZHK
+      stack-version-id: 01J5NB9B0CXC6JAPS5M6R8RWQP
+      type: app
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: qatests-studio-base/qatests-stack-base@37.0.0/plugin-app-dummy-02@0.0.1
+      alias: plugin-app-dummy-02-1724100257353
+      plugin-version-id: 01HER28S4J1V4X1ZRCYC2BRKK9
+      stack-version-id: 01J5NB9B0CXC6JAPS5M6R8RWQP
+      type: app
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
