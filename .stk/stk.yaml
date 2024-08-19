@@ -1,0 +1,69 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: infra-test-0da133f7
+  description: "Description or Descrição of infra-test-0da133f7"
+  stack-version-id: 01HZ2BRXKR9NJSFBJAE74DH1N0
+  stack: qatests-stack-base@25.0.0
+spec:
+  type: infra
+  plugins:
+    - name: qatests-studio-base/qatests-stack-base@25.0.0/plugin-infra-from-studio-a@0.0.1
+      alias: plugin-infra-from-studio-a-1724102398704
+      plugin-version-id: 01HKSTGHE2MKJ0ABNFYKNTMAJN
+      stack-version-id: 01HZ2BRXKR9NJSFBJAE74DH1N0
+      type: infra
+      inputs:
+        resource: Client
+        method: GET
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: 
+        qatests-studio-base/qatests-stack-base@25.0.0/plugin-infra-generates-two-sns@0.0.1
+      alias: alias01
+      plugin-version-id: 01HER3WF4YFFW2K8W20PD5K9R1
+      stack-version-id: 01HZ2BRXKR9NJSFBJAE74DH1N0
+      type: infra
+      inputs:
+        topic1_name: dummy-sns-1
+        topic2_name: dummy-sns-2
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-sns-conn
+            selected: conn1-bb400c43
+            alias: sns-generate-alias-1
+          - type: aws-sns-conn
+            selected: conn2-766b3510
+            alias: sns-generate-alias-2
+        requires: []
+      links:
+        generates: []
+    - name: 
+        qatests-studio-base/qatests-stack-base@25.0.0/plugin-infra-requires-two-sns@0.0.1
+      alias: alias02
+      plugin-version-id: 01HER3XB6WGTCB4XQ9W5QW3B35
+      stack-version-id: 01HZ2BRXKR9NJSFBJAE74DH1N0
+      type: infra
+      inputs:
+        resource: Client
+        method: GET
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires:
+          - type: aws-sns-conn
+            selected: conn1-bb400c43
+            alias: sns-require-alias-1
+          - type: aws-sns-conn
+            selected: conn1-bb400c43
+            alias: sns-require-alias2
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
