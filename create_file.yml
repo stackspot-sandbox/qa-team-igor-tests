@@ -1,0 +1,90 @@
+kind: application
+metadata:
+  description: app-igor-01-with-new-inputs-and-context
+  name: app-igor-01-with-new-inputs-and-context
+schema-version: v1
+spec:
+  applied-plugins:
+  - alias: plugin-app-dummy-01-1724183399347
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input1: value1
+    inputs-envs: {}
+    name: qatests-studio-base/stack-igor-tests@3.0.0/plugin-app-dummy-01
+  - alias: plugin-app-input-object-workspace-context-tests-1724183404020
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input_object_1:
+        input_bool_from_input_object_1: true
+        input_int_from_input_object_1: 1
+        input_multiselect_from_input_object_1:
+        - multiselect-value5-input-default
+        - multiselect-value6-input-default
+        input_text_from_input_object_1: test
+        input_text_select_from_input_object_1: select-value4
+      input_object_2:
+        input_bool_from_input_object_2: false
+        input_int_from_input_object_2: 222
+        input_multiselect_from_input_object_2:
+        - multiselect-value3-workspace-level
+        - multiselect-value4-workspace-level
+        input_text_from_input_object_2: '222'
+        input_text_select_from_input_object_2: select-value2-workspace-level
+      input_object_3:
+        input_bool_from_input_object_3: true
+        input_int_from_input_object_3: 333
+        input_multiselect_from_input_object_2:
+        - multiselect-value5-input-default
+        - multiselect-value6-input-default
+        input_text_from_input_object_3: '333'
+        input_text_select_from_input_object_3: select-value4
+    inputs-envs: {}
+    name: qatests-studio-base/stack-igor-tests@3.0.0/plugin-app-input-object-workspace-context-tests
+  - alias: plugin-app-input-list-workspace-context-tests-1724183449216
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input_list_1_int:
+      - '12312312'
+      input_list_1_object:
+      - input_bool_from_input_object_list_1: true
+        input_int_from_input_object_list_1: 1
+        input_multiselect_from_input_object_list_1:
+        - multiselect-value5-input-default
+        - multiselect-value6-input-default
+        input_text_from_input_object_list_1: test
+        input_text_select_from_input_object_list_1: select-value4
+      input_list_1_text:
+      - '123123'
+      input_list_2_int:
+      - '222'
+      input_list_2_object:
+      - input_bool_from_input_object_list_2: true
+        input_int_from_input_object_list_2: 2222
+        input_multiselect_from_input_object_list_2:
+        - multiselect-value3-workspace-level
+        - multiselect-value4-workspace-level
+        input_text_from_input_object_list_2: '222'
+        input_text_select_from_input_object_list_2: select-value2-workspace-level
+      input_list_2_text:
+      - '222'
+      input_list_3_int:
+      - '3329'
+      input_list_3_object:
+      - input_bool_from_input_object_list_3: true
+        input_int_from_input_object_list_3: 1
+        input_multiselect_from_input_object_list_3:
+        - multiselect-value5-input-default
+        - multiselect-value6-input-default
+        input_text_from_input_object_list_3: test
+        input_text_select_from_input_object_list_3: select-value4
+      input_list_3_text:
+      - '3333'
+    inputs-envs: {}
+    name: qatests-studio-base/stack-igor-tests@3.0.0/plugin-app-input-list-workspace-context-tests
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
