@@ -8,6 +8,7 @@ metadata:
   stack: stack-igor-tests@2.0.0
 spec:
   type: app
+  app-id: 01J5RC01AAG6KHS6FEX25BN6SZ
   plugins:
     - name: qatests-studio-base/stack-igor-tests@2.0.0/plugin-app-dummy-01@0.0.1
       alias: plugin-app-dummy-01-1724173449063
