@@ -1,0 +1,20 @@
+kind: shared-infrastructure
+metadata:
+  description: sdfsdf
+  name: sdfsdfsdfsd
+schema-version: v1
+spec:
+  applied-plugins:
+  - alias: plug-newinput-rc-context-1724255293213
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      meualisns123: aaajulio6agov3
+      meualisns123v2: aaaaa
+      meualisns123v3: aaajulio6agov3
+      resource: Client
+    inputs-envs: {}
+    name: studio-jcgs/stack-test-v3@2.2.0/plug-newinput-rc-context
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
+  stack-qualifier: studio-jcgs/stack-test-v3@2.2.0
