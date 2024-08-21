@@ -1,0 +1,39 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: sdfsdfsdfsd
+  description: sdfsdf
+  stack-version-id: 01J5R1VXQ4RRV2HNH8NDXPRVC9
+  stack: stack-test-v3@2.2.0
+spec:
+  type: infra
+  infra-id: 01J5TT1M57XS80M537M56KQX5F
+  plugins:
+    - name: studio-jcgs/stack-test-v3@2.2.0/plug-newinput-rc-context@0.0.1
+      alias: plug-newinput-rc-context-1724255293213
+      plugin-version-id: 01J5R1NX61QS5SVSV63F28WR4P
+      stack-version-id: 01J5R1VXQ4RRV2HNH8NDXPRVC9
+      type: infra
+      inputs:
+        resource: Client
+        meualisns123:
+          stk-type: required-connection
+          selected: aaajulio6agov3
+          type: aws-sns-conn
+        meualisns123v2:
+          stk-type: required-connection
+          selected: aaaaa
+          type: aws-sns-conn
+        meualisns123v3:
+          stk-type: required-connection
+          selected: aaajulio6agov3
+          type: aws-sns-conn
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
