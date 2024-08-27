@@ -1,0 +1,48 @@
+kind: shared-infrastructure
+metadata:
+  description: "Description or Descri\xE7\xE3o of infra-test-1b02d3e7"
+  name: infra-test-1b02d3e7
+schema-version: v1
+spec:
+  applied-plugins:
+  - alias: alias01
+    connections:
+      generates:
+      - alias: sns-generate-alias-1
+        selected: conn1-df1721bc
+        type: aws-sns-conn
+      - alias: sns-generate-alias-2
+        selected: conn2-82f5b196
+        type: aws-sns-conn
+      requires: []
+    inputs:
+      topic1_name: dummy-sns-1
+      topic2_name: dummy-sns-2
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@25.0.0/plugin-infra-generates-two-sns
+  - alias: alias02
+    connections:
+      generates: []
+      requires:
+      - alias: sns-require-alias-1
+        selected: conn1-df1721bc
+        type: aws-sns-conn
+      - alias: sns-require-alias2
+        selected: conn1-df1721bc
+        type: aws-sns-conn
+    inputs:
+      method: GET
+      resource: Client
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@25.0.0/plugin-infra-requires-two-sns
+  - alias: plugin-infra-from-studio-a-1724764964507
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      method: GET
+      resource: Client
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@25.0.0/plugin-infra-from-studio-a
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
+  stack-qualifier: qatests-studio-base/qatests-stack-base@25.0.0
