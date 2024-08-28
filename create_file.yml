@@ -1,0 +1,28 @@
+kind: application
+metadata:
+  description: testes
+  name: testes65767
+schema-version: v1
+spec:
+  applied-plugins:
+  - alias: plugin-app-dummy-01-1724851741885
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input1: value1
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@39.0.0/plugin-app-dummy-01
+  - alias: plugin-app-input-password-tests-1724851748405
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input_list_1:
+      - list_object_password_input: MDFKNkNKVEcxTURONEgxSFRUV1lHSkVOVE18S3pFc3ZUUG9hUTd6bnRRVGpwT1RWUT09
+      root_object_input:
+        object_password_input: MDFKNkNKVEZXV0VEMVpKNUZTSFBBQTNCOUh8MXJhQXJjcTFXT3QzdDlJWFh3N0MyZz09
+      root_password_input: MDFKNkNKVENEQ0tWOFBCQktTVkhORkI0RFR8VjVIT2N1Z1NNbmdBTEFGeDQzT3Ardz09
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@39.0.0/plugin-app-input-password-tests
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests

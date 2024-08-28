@@ -1,0 +1,45 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: testes65767
+  description: testes
+  starter: qatests-studio-base/qatests-stack-base@39.0.0/qatests-starter-base
+  stack-version-id: 01J6CJM9Q6C890T64B9DW90W3Y
+  stack: qatests-stack-base@39.0.0
+spec:
+  type: app
+  plugins:
+    - name: qatests-studio-base/qatests-stack-base@39.0.0/plugin-app-dummy-01@0.0.1
+      alias: plugin-app-dummy-01-1724851741885
+      plugin-version-id: 01HER273JJWYBH5HBTT9D71ZHK
+      stack-version-id: 01J6CJM9Q6C890T64B9DW90W3Y
+      type: app
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: 
+        qatests-studio-base/qatests-stack-base@39.0.0/plugin-app-input-password-tests@0.0.1
+      alias: plugin-app-input-password-tests-1724851748405
+      plugin-version-id: 01J6CHR4GMZKZWV3AGMWAWHX9G
+      stack-version-id: 01J6CJM9Q6C890T64B9DW90W3Y
+      type: app
+      inputs:
+        root_password_input: '***'
+        root_object_input:
+          object_password_input: '***'
+        input_list_1:
+          - list_object_password_input: '***'
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
