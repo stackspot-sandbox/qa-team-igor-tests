@@ -1,0 +1,24 @@
+kind: application
+metadata:
+  description: sdasdas
+  name: sadasd21
+schema-version: v1
+spec:
+  applied-plugins:
+  - alias: plugin-app-dummy-01-1725453311837
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input1: value1
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@37.0.0/plugin-app-dummy-01
+  - alias: plugin-app-dummy-01-1725453315380
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input1: value1
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@37.0.0/plugin-app-dummy-01
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
