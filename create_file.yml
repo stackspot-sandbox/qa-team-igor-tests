@@ -1,0 +1,24 @@
+kind: application
+metadata:
+  description: testes01
+  name: testes01
+schema-version: v1
+spec:
+  applied-plugins:
+  - alias: plugin-app-dummy-01-1725449733296
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input1: value1
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@39.0.0/plugin-app-dummy-01
+  - alias: plugin-app-dummy-01-1725449737270
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input1: value1
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@39.0.0/plugin-app-dummy-01
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
