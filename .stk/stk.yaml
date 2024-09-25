@@ -1,0 +1,26 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: my-infra-andre
+  description: aaaaaaaaa
+  stack-version-id: 01J8MMMMX422N16GW2W62DXHRY
+  stack: var-stack@0.0.1
+spec:
+  type: infra
+  plugins:
+    - name: cli-studio-v2/var-stack@0.0.1/infra-basic-plugin@0.0.1
+      alias: infra-basic-plugin-1727270525741
+      plugin-version-id: 01J8MMF4311BGDM7R25GKG0XQH
+      stack-version-id: 01J8MMMMX422N16GW2W62DXHRY
+      type: infra
+      inputs:
+        resource: '{{var.STK_PROJECT_NAME}}'
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
