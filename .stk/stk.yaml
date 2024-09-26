@@ -8,6 +8,7 @@ metadata:
   stack: front@7.0.2
 spec:
   type: app
+  app-id: 01J8R0RDQQGBY56J2K1ZD22M2S
   plugins:
     - name: front/front@7.0.2/plugin-conditional@1.0.0
       alias: plugin-conditional-1727382721773
