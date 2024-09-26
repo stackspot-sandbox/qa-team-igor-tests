@@ -7,6 +7,7 @@ metadata:
   stack: front@7.0.3
 spec:
   type: infra
+  infra-id: 01J8R1X7W4N63VRJZEF48YYWDF
   plugins:
     - name: front/front@7.0.3/infra-app-allowed-false@0.0.1
       alias: infra-app-allowed-false-1727383934020
