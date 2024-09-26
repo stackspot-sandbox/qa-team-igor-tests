@@ -1,0 +1,26 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: teste123
+  description: teste
+  stack-version-id: 01J7EJV7PPHASGRYS1ZAAK16E3
+  stack: front@7.0.3
+spec:
+  type: infra
+  infra-id: 01J8R1X7W4N63VRJZEF48YYWDF
+  plugins:
+    - name: front/front@7.0.3/infra-app-allowed-false@0.0.1
+      alias: infra-app-allowed-false-1727383934020
+      plugin-version-id: 01HQBGC1WTT0RP9GH1RYZN7FTT
+      stack-version-id: 01J7EJV7PPHASGRYS1ZAAK16E3
+      type: infra
+      inputs: {}
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
