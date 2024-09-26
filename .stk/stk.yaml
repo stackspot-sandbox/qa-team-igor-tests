@@ -1,0 +1,76 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: teste123
+  description: teste
+  starter: front/front@7.0.2/app-starter-asd
+  stack-version-id: 01J7BN8ASM1RW0Y438J1Y3FM1R
+  stack: front@7.0.2
+spec:
+  type: app
+  plugins:
+    - name: front/front@7.0.2/plugin-conditional@1.0.0
+      alias: plugin-conditional-1727382721773
+      plugin-version-id: 01HQBJEAMMXN8HEVAHB8XWZZNV
+      stack-version-id: 01J7BN8ASM1RW0Y438J1Y3FM1R
+      type: app
+      inputs:
+        language: Java
+        java_version: '11'
+        customer_snippet: true
+        table_name: '1'
+        user_age: 1
+        team: '2'
+        field_4: item4
+        field_number: 1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: front/front@7.0.2/plugin-chamuska@0.1.0
+      alias: plugin-chamuska-1727382721804
+      plugin-version-id: 01HGTKK2MP2DFGA6A403TEJCQA
+      stack-version-id: 01J7BN8ASM1RW0Y438J1Y3FM1R
+      type: app
+      inputs:
+        resource: Client
+        method: GET
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: front/front@7.0.2/testerequiresapp@0.0.1
+      alias: testerequiresapp-1727382934955
+      plugin-version-id: 01HRSY553FHS5XVD32NED488F5
+      stack-version-id: 01J7BN8ASM1RW0Y438J1Y3FM1R
+      type: app
+      inputs:
+        resource: Client
+        method: GET
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: front/front@7.0.2/teste-plugin-purpa@0.0.1
+      alias: teste-plugin-purpa-1727382934941
+      plugin-version-id: 01HSY70QYT39RB8MC2FE9GR4Z8
+      stack-version-id: 01J7BN8ASM1RW0Y438J1Y3FM1R
+      type: app
+      inputs:
+        resource: Client
+        method: GET
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
