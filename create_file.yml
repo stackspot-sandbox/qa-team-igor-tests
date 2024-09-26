@@ -1,0 +1,33 @@
+kind: application
+metadata:
+  description: "Description or Descri\xE7\xE3o of app-test-a930c4eb609f"
+  name: app-test-a930c4eb609f
+schema-version: v1
+spec:
+  applied-plugins:
+  - alias: plugin-app-dummy-01-1727359998339
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input1: value1
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@25.0.0/plugin-app-dummy-01
+  - alias: plugin-app-from-studio-a-1727360010777
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input1: value1
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@25.0.0/plugin-app-from-studio-a
+  - alias: plugin-infra-from-studio-a-1727360021708
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      method: GET
+      resource: Client
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@25.0.0/plugin-infra-from-studio-a
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
