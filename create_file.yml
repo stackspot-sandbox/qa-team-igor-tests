@@ -1,0 +1,77 @@
+kind: application
+metadata:
+  description: "Description or Descri\xE7\xE3o of app-test-13330093d246"
+  name: app-test-13330093d246
+schema-version: v1
+spec:
+  applied-plugins:
+  - alias: plugin-app-dummy-01-1727440325193
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input1: value1
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@37.0.0/plugin-app-dummy-01
+  - alias: plugin-app-input-list-workspace-context-tests-1727440377723
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input_list_1_int:
+      - '11100'
+      - '22200'
+      input_list_1_object:
+      - input_bool_from_input_object_list_1: false
+        input_int_from_input_object_list_1: 111
+        input_multiselect_from_input_object_list_1:
+        - multiselect-value1-account-level
+        - multiselect-value2-account-level
+        input_text_from_input_object_list_1: value-account-1
+        input_text_select_from_input_object_list_1: select-value1-account-level
+      - input_bool_from_input_object_list_1: true
+        input_int_from_input_object_list_1: 222
+        input_multiselect_from_input_object_list_1:
+        - multiselect-value1-account-level
+        input_text_from_input_object_list_1: value-account-2
+        input_text_select_from_input_object_list_1: select-value1-account-level
+      input_list_1_text:
+      - list-text-account-1
+      - list-text-account-2
+      input_list_2_int:
+      - '33300'
+      - '44400'
+      input_list_2_object:
+      - input_bool_from_input_object_list_2: true
+        input_int_from_input_object_list_2: 333
+        input_multiselect_from_input_object_list_2:
+        - multiselect-value3-workspace-level
+        - multiselect-value4-workspace-level
+        input_text_from_input_object_list_2: value-workspace-1
+        input_text_select_from_input_object_list_2: select-value2-workspace-level
+      - input_bool_from_input_object_list_2: false
+        input_int_from_input_object_list_2: 444
+        input_multiselect_from_input_object_list_2:
+        - multiselect-value4-workspace-level
+        input_text_from_input_object_list_2: value-workspace-2
+        input_text_select_from_input_object_list_2: select-value2-workspace-level
+      input_list_2_text:
+      - list-text-workspace-1
+      - list-text-workspace-2
+      input_list_3_int:
+      - '4548'
+      input_list_3_object:
+      - input_bool_from_input_object_list_3: true
+        input_int_from_input_object_list_3: 1
+        input_multiselect_from_input_object_list_3:
+        - multiselect-value1-account-level
+        - multiselect-value2-account-level
+        - multiselect-value3-workspace-level
+        - multiselect-value4-workspace-level
+        input_text_from_input_object_list_3: test
+        input_text_select_from_input_object_list_3: select-value4
+      input_list_3_text:
+      - '444'
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@37.0.0/plugin-app-input-list-workspace-context-tests
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
