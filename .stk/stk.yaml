@@ -1,0 +1,55 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: app-test-3c7df53477b8
+  description: "Description or Descrição of app-test-3c7df53477b8"
+  starter: qatests-studio-base/qatests-stack-base@25.0.0/qatests-starter-base
+  stack-version-id: 01HZ2BRXKR9NJSFBJAE74DH1N0
+  stack: qatests-stack-base@25.0.0
+spec:
+  type: app
+  app-id: 01J9521CFCAPKSZJHXACGQCTTC
+  plugins:
+    - name: qatests-studio-base/qatests-stack-base@25.0.0/plugin-infra-from-studio-a@0.0.1
+      alias: plugin-infra-from-studio-a-1727820501492
+      plugin-version-id: 01HKSTGHE2MKJ0ABNFYKNTMAJN
+      stack-version-id: 01HZ2BRXKR9NJSFBJAE74DH1N0
+      type: infra
+      inputs:
+        resource: Client
+        method: GET
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: qatests-studio-base/qatests-stack-base@25.0.0/plugin-app-dummy-01@0.0.1
+      alias: plugin-app-dummy-01-1727820483827
+      plugin-version-id: 01HER273JJWYBH5HBTT9D71ZHK
+      stack-version-id: 01HZ2BRXKR9NJSFBJAE74DH1N0
+      type: app
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: qatests-studio-base/qatests-stack-base@25.0.0/plugin-app-from-studio-a@0.0.1
+      alias: plugin-app-from-studio-a-1727820492895
+      plugin-version-id: 01HKSTCZ9SDFAZDVBDSJVW0KVB
+      stack-version-id: 01HZ2BRXKR9NJSFBJAE74DH1N0
+      type: app
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
