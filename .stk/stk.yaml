@@ -1,0 +1,87 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: app-tests-2
+  description: app-tests-2
+  starter: qatests-studio-base/qatests-stack-base@39.0.0/qatests-starter-base
+  stack-version-id: 01J6CJM9Q6C890T64B9DW90W3Y
+  stack: qatests-stack-base@39.0.0
+spec:
+  type: app
+  app-id: 01J9XTG7XX3KWPY4BSSAYV96GD
+  plugins:
+    - name: qatests-studio-base/qatests-stack-base@39.0.0/plugin-app-dummy-01@0.0.1
+      alias: plugin-app-dummy-01-1728651398885
+      plugin-version-id: 01HER273JJWYBH5HBTT9D71ZHK
+      stack-version-id: 01J6CJM9Q6C890T64B9DW90W3Y
+      type: app
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: 
+        qatests-studio-base/qatests-stack-base@39.0.0/plugin-app-input-object-conditional-tests@2.0.0
+      alias: plugin-app-input-object-conditional-tests-1728651411227
+      plugin-version-id: 01J5B6HQTM8DJM312YY18SP742
+      stack-version-id: 01J6CJM9Q6C890T64B9DW90W3Y
+      type: app
+      inputs:
+        input_text_1: input_text_1-value
+        input_list_1:
+          - input_text_from_input_object: input_text_from_input_object-list-value
+          - input_text_from_input_object: input_text_from_input_object-list-value
+        input_list_2:
+          - asdasd
+          - asdasdas
+          - asdasd
+        input_object_1:
+          input_text_from_input_object: input_text_from_input_object-value
+        input_object_2:
+          field_1: true
+          field_1_conditional_1: ok
+          field_1_conditional_4: ok
+          field_2: false
+          field_2_conditional_2: ok
+          field_2_conditional_3: ok
+          field_3: ''
+          field_3_conditional_1: ok
+          field_3_conditional_4: ok
+          field_4: test
+          field_4_conditional_2: ok
+          field_4_conditional_3: ok
+          field_5_conditional_2: ok
+          field_6: 1
+          field_6_conditional_1: ok
+          field_6_conditional_5: ok
+          field_6_conditional_6: ok
+          field_7_conditional_4: ok
+          field_8: test
+          field_8_conditional_3: ok
+          field_9_conditional_3: ok
+          field_9_conditional_4: ok
+          field_9_conditional_6: ok
+          field_9_conditional_10: ok
+          field_10:
+            - item1
+            - item2
+          field_10_conditional_1: ok
+          field_10_conditional_2: ok
+          field_10_conditional_5: ok
+          field_10_conditional_9: ok
+        input_object_3:
+          field_1_conditional_1_from_input_object: ok
+          field_1_conditional_2_from_input_object: ok
+          field_1_conditional_3_from_input_object: ok
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
