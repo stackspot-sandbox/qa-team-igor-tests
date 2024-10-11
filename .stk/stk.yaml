@@ -8,6 +8,7 @@ metadata:
   stack: qatests-stack-base@29.0.0
 spec:
   type: app
+  app-id: 01J9W2AZESW2152CXYAAW03STF
   plugins:
     - name: qatests-studio-base/qatests-stack-base@29.0.0/plugin-app-dummy-01@0.0.1
       alias: plugin-app-dummy-01-1728592506082
