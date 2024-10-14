@@ -1,0 +1,38 @@
+kind: application
+metadata:
+  description: app-1241412315r12
+  name: app-1241412315r12
+schema-version: v1
+spec:
+  applied-plugins:
+  - alias: plugin-app-dummy-01-1728935594443
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      input1: value1
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@40.0.0/plugin-app-dummy-01
+  - alias: plugin-infra-generates-one-sns-1728935600766
+    connections:
+      generates:
+      - alias: alias-generate-one-sns
+        selected: aaa123123
+        type: aws-sns-conn
+      requires: []
+    inputs:
+      topic1_name: '123423423423'
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@40.0.0/plugin-infra-generates-one-sns
+  - alias: plugin-infra-requires-one-sns-1728935646653
+    connections:
+      generates: []
+      requires:
+      - alias: alias-requires-one-sns
+        selected: aaa123123
+        type: aws-sns-conn
+    inputs:
+      resource: Client
+    inputs-envs: {}
+    name: qatests-studio-base/qatests-stack-base@40.0.0/plugin-infra-requires-one-sns
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests

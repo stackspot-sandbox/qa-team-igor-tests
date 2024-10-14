@@ -1,0 +1,61 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: app-1241412315r12
+  description: app-1241412315r12
+  starter: qatests-studio-base/qatests-stack-base@40.0.0/qatests-starter-base
+  stack-version-id: 01J9Y5YWC9NXM8MM83F3Y3CF8S
+  stack: qatests-stack-base@40.0.0
+spec:
+  type: app
+  plugins:
+    - name: 
+        qatests-studio-base/qatests-stack-base@40.0.0/plugin-infra-generates-one-sns@0.0.2
+      alias: plugin-infra-generates-one-sns-1728935600766
+      plugin-version-id: 01J0TKH51C9CB2ESQAPJ7EJJ16
+      stack-version-id: 01J9Y5YWC9NXM8MM83F3Y3CF8S
+      type: infra
+      inputs:
+        topic1_name: '123423423423'
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-sns-conn
+            selected: aaa123123
+            alias: alias-generate-one-sns
+        requires: []
+      links:
+        generates: []
+    - name: 
+        qatests-studio-base/qatests-stack-base@40.0.0/plugin-infra-requires-one-sns@0.0.1
+      alias: plugin-infra-requires-one-sns-1728935646653
+      plugin-version-id: 01HER3WXQJSHJ1ZYDT95P240S7
+      stack-version-id: 01J9Y5YWC9NXM8MM83F3Y3CF8S
+      type: infra
+      inputs:
+        resource: Client
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires:
+          - type: aws-sns-conn
+            selected: aaa123123
+            alias: alias-requires-one-sns
+      links:
+        generates: []
+    - name: qatests-studio-base/qatests-stack-base@40.0.0/plugin-app-dummy-01@0.0.1
+      alias: plugin-app-dummy-01-1728935594443
+      plugin-version-id: 01HER273JJWYBH5HBTT9D71ZHK
+      stack-version-id: 01J9Y5YWC9NXM8MM83F3Y3CF8S
+      type: app
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
