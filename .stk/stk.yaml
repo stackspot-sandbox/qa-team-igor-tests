@@ -8,6 +8,7 @@ metadata:
   stack: qatests-stack-base@25.0.0
 spec:
   type: app
+  app-id: 01JA5VBG9W27T5PZBY44ARQEA4
   plugins:
     - name: qatests-studio-base/qatests-stack-base@25.0.0/plugin-infra-from-studio-a@0.0.1
       alias: plugin-infra-from-studio-a-1728920789137
