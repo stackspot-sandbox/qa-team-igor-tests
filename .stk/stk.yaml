@@ -8,6 +8,7 @@ metadata:
   stack: qatests-stack-actions-input-tests@1.0.0
 spec:
   type: app
+  app-id: 01JA84R9A7H4GXMHNS5YN2EX6T
   plugins:
     - name: 
         qatests-studio-base/qatests-stack-actions-input-tests@1.0.0/plugin-app-dummy-01@0.0.1
