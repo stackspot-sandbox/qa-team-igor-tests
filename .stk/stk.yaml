@@ -1,0 +1,29 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: app-actions-test
+  description: app-actions-test
+  starter: qatests-studio-base/qatests-stack-actions-input-tests@1.0.0/starter-01
+  stack-version-id: 01J4Q4FFPEAMRACSKPTWTRK2N0
+  stack: qatests-stack-actions-input-tests@1.0.0
+spec:
+  type: app
+  app-id: 01JA84R9A7H4GXMHNS5YN2EX6T
+  plugins:
+    - name: 
+        qatests-studio-base/qatests-stack-actions-input-tests@1.0.0/plugin-app-dummy-01@0.0.1
+      alias: plugin-app-dummy-01-1728997753125
+      plugin-version-id: 01HER273JJWYBH5HBTT9D71ZHK
+      stack-version-id: 01J4Q4FFPEAMRACSKPTWTRK2N0
+      type: app
+      inputs:
+        input1: value1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
