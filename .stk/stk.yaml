@@ -1,0 +1,48 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: teste-purpa
+  description: teste
+  stack-version-id: 01JAX05RQCQRY3AEYBF02PM95E
+  stack: front@7.0.6
+spec:
+  type: infra
+  infra-id: 01JC1CB7D32PV6VJAN4TQMKZN4
+  plugins:
+    - name: front/front@7.0.6/teste-appallowed@2.0.0
+      alias: teste-appallowed-1730918308566
+      plugin-version-id: 01J486QDD03K9SGB35X9HEFETG
+      stack-version-id: 01JAX05RQCQRY3AEYBF02PM95E
+      type: infra
+      inputs:
+        resource: Client
+        method: GET
+      inputs-envs:
+        sqs_arn:
+          a11y: '{{var.AAAEE}}'
+          accessibility-test: '{{var.AAAEE}}'
+          amb-spa-test: '{{var.AAAEE}}'
+          amb-test-global: '{{var.AAAEE}}'
+          ambiente-teste-123: '{{var.AAAEE}}'
+          ambiente-teste-novo-layout: '{{var.AAAEE}}'
+          asdasd: '{{var.AAAEE}}'
+          cloud-services: '{{var.AAAEE}}'
+          development: '{{var.AAAEE}}'
+          novo: '{{var.AAAEE}}'
+          production: '{{var.AAAEE}}'
+          quality-assurance: '{{var.AAAEE}}'
+          staging: '{{var.AAAEE}}'
+          stg-test-env: '{{var.AAAEE}}'
+          technical-writer: '{{var.AAAEE}}'
+          teste: '{{var.AAAEE}}'
+          teste-ambiente-novo-layout2: '{{var.AAAEE}}'
+          teste11: '{{var.AAAEE}}'
+          tiagoteste: '{{var.AAAEE}}'
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
