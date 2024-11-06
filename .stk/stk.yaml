@@ -1,0 +1,43 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: teste12345
+  description: teste
+  starter: front/front@7.0.6/starter-front
+  stack-version-id: 01JAX05RQCQRY3AEYBF02PM95E
+  stack: front@7.0.6
+spec:
+  type: app
+  app-id: 01JC1BQT5PJ5DCP88A64YFAWR7
+  plugins:
+    - name: front/front@7.0.6/testerequiresapp@0.0.1
+      alias: testerequiresapp-1730916818213
+      plugin-version-id: 01HRSY553FHS5XVD32NED488F5
+      stack-version-id: 01JAX05RQCQRY3AEYBF02PM95E
+      type: app
+      inputs:
+        resource: Client
+        method: GET
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: front/front@7.0.6/teste-plugin-purpa@0.0.1
+      alias: teste-plugin-purpa-1730916818360
+      plugin-version-id: 01HSY70QYT39RB8MC2FE9GR4Z8
+      stack-version-id: 01JAX05RQCQRY3AEYBF02PM95E
+      type: app
+      inputs:
+        resource: Client
+        method: GET
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
