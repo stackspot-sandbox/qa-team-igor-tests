@@ -7,6 +7,7 @@ metadata:
   stack: front@7.0.6
 spec:
   type: infra
+  infra-id: 01JC1CB7D32PV6VJAN4TQMKZN4
   plugins:
     - name: front/front@7.0.6/teste-appallowed@2.0.0
       alias: teste-appallowed-1730918308566
