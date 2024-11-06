@@ -1,0 +1,38 @@
+kind: shared-infrastructure
+metadata:
+  description: teste
+  name: teste-purpa
+schema-version: v1
+spec:
+  applied-plugins:
+  - alias: teste-appallowed-1730918308566
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      method: GET
+      resource: Client
+    inputs-envs:
+      sqs_arn:
+        A11y: '{{var.AAAEE}}'
+        Accessibility-Test: '{{var.AAAEE}}'
+        TESTE: '{{var.AAAEE}}'
+        amb-spa-test: '{{var.AAAEE}}'
+        amb-test-global: '{{var.AAAEE}}'
+        ambiente-teste-123: '{{var.AAAEE}}'
+        ambiente-teste-novo-layout: '{{var.AAAEE}}'
+        asdasd: '{{var.AAAEE}}'
+        cloud-services: '{{var.AAAEE}}'
+        development: '{{var.AAAEE}}'
+        novo: '{{var.AAAEE}}'
+        production: '{{var.AAAEE}}'
+        quality-assurance: '{{var.AAAEE}}'
+        staging: '{{var.AAAEE}}'
+        stg-test-env: '{{var.AAAEE}}'
+        technical-writer: '{{var.AAAEE}}'
+        teste-ambiente-novo-layout2: '{{var.AAAEE}}'
+        teste11: '{{var.AAAEE}}'
+        tiagoteste: '{{var.AAAEE}}'
+    name: front/front@7.0.6/teste-appallowed
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
+  stack-qualifier: front/front@7.0.6
