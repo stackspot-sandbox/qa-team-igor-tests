@@ -8,6 +8,7 @@ metadata:
   stack: front@7.0.6
 spec:
   type: app
+  app-id: 01JC1BQT5PJ5DCP88A64YFAWR7
   plugins:
     - name: front/front@7.0.6/testerequiresapp@0.0.1
       alias: testerequiresapp-1730916818213
