@@ -1,0 +1,26 @@
+kind: application
+metadata:
+  description: teste
+  name: teste12345
+schema-version: v1
+spec:
+  applied-plugins:
+  - alias: testerequiresapp-1730916818213
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      method: GET
+      resource: Client
+    inputs-envs: {}
+    name: front/front@7.0.6/testerequiresapp
+  - alias: teste-plugin-purpa-1730916818360
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      method: GET
+      resource: Client
+    inputs-envs: {}
+    name: front/front@7.0.6/teste-plugin-purpa
+  repository: https://github.com/stackspot-sandbox/qa-team-igor-tests
