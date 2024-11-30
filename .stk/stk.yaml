@@ -1,0 +1,25 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: app-test-7c5d758e
+  description: Description of app-test-7c5d758e
+  starter: studio-automated-tests-qa/stack-automated-tests-qa/starter-automated-tests-qa
+  stack-version-id: 01H508K6WH1EHB785ZRNDTEP6D
+  stack: stack-automated-tests-qa
+spec:
+  type: app
+  app-id: 01H81Z0J1NVVFMZVJKNER11KZV
+  plugins:
+    - name: studio-automated-tests-qa/stack-automated-tests-qa/plugin-app-default@0.0.1
+      alias: plugin-alias
+      plugin-version-id: 01H4ZXYMDZ5Z8CTW2NAQ6761MC
+      stack-version-id: 01H508K6WH1EHB785ZRNDTEP6D
+      type: app
+      inputs:
+        resource: Client
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+  global-inputs: {}
+  global-computed-inputs: {}
