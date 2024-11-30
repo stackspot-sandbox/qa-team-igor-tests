@@ -1,0 +1,23 @@
+schema-version: v1
+kind: manifest
+metadata:
+  name: app-test-97175rd6m3as2bmf
+  description: Description of app-test-97175rd6m3as2bmf
+  starter: studio-automated-tests-qa/stack-automated-tests-qa/starter-automated-tests-qa
+  stack-version-id: 01H508K6WH1EHB785ZRNDTEP6D
+  stack: stack-automated-tests-qa
+spec:
+  type: app
+  app-id: 01H55Z0TC2Q9KYT5ZCDS5N0DSG
+  plugins:
+    - name: studio-automated-tests-qa/stack-automated-tests-qa/plugin-app-default@0.0.1
+      plugin-version-id: 01H4ZXYMDZ5Z8CTW2NAQ6761MC
+      stack-version-id: 01H508K6WH1EHB785ZRNDTEP6D
+      type: app
+      inputs:
+        resource: Client
+      inputs-envs: {}
+      connectors: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/guedes-spot/qa-team-igor-tests
